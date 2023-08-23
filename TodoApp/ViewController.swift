@@ -13,7 +13,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-@IBOutlet var tableView
+    
+    //this outlet leads us control the tableview on the storyboard we just embeded
+    @IBOutlet var tableView: UITableView!
 
 }
 
+extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath , animated: true )
+    }
+    
+}
+
+extension ViewController: UITableViewDataSource  {
+  
+    
+    
+}
